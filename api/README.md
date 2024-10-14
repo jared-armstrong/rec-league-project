@@ -19,4 +19,5 @@
 ### 15. Set up Model(s) in a models directory for mongoose
 ### 16. Set up middleware for all packages install in step 14 in server.js
 ### 17. Create .env and .env.example for mongo connection string
-### 18. 
+### 18. Add new route(s) for MongoDB Model, test in api to see the route works
+### 19. Set up git repository, push to GitHub
