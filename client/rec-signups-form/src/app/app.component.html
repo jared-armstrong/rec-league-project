@@ -1,152 +1,154 @@
 
 
-<main class="main">
-  <div class="content">
+<!--<main class="main">-->
+<!--  <div class="content">-->
 
-    <form (ngSubmit)="onSubmit()">
-      <!-- Parent/Guardian One Information -->
-      <div>
-        <h3>Parent/Guardian One</h3>
-        <label>
-          Name:
-          <input type="text" name="parentGuardianOneName" [(ngModel)]="registrant.parentInfo.parentGuardianOne.name" required />
-        </label>
-        <label>
-          Phone:
-          <input type="tel" name="parentGuardianOnePhone" [(ngModel)]="registrant.parentInfo.parentGuardianOne.phone" required />
-        </label>
-        <label>
-          Email:
-          <input type="email" name="parentGuardianOneEmail" [(ngModel)]="registrant.parentInfo.parentGuardianOne.email" />
-        </label>
-      </div>
+<!--    <form (ngSubmit)="onSubmit()">-->
+<!--      &lt;!&ndash; Parent/Guardian One Information &ndash;&gt;-->
+<!--      <div>-->
+<!--        <h3>Parent/Guardian One</h3>-->
+<!--        <label>-->
+<!--          Name:-->
+<!--          <input type="text" name="parentGuardianOneName" [(ngModel)]="registrant.parentInfo.parentGuardianOne.name" required />-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          Phone:-->
+<!--          <input type="tel" name="parentGuardianOnePhone" [(ngModel)]="registrant.parentInfo.parentGuardianOne.phone" required />-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          Email:-->
+<!--          <input type="email" name="parentGuardianOneEmail" [(ngModel)]="registrant.parentInfo.parentGuardianOne.email" />-->
+<!--        </label>-->
+<!--      </div>-->
 
-      <!-- Emergency Contact -->
-      <div>
-        <h3>Emergency Contact</h3>
-        <label>
-          Name:
-          <input type="text" name="emergencyContactName" [(ngModel)]="registrant.parentInfo.emergencyContact.name" required />
-        </label>
-        <label>
-          Phone:
-          <input type="tel" name="emergencyContactPhone" [(ngModel)]="registrant.parentInfo.emergencyContact.phone" required />
-        </label>
-        <label>
-          Email:
-          <input type="email" name="emergencyContactEmail" [(ngModel)]="registrant.parentInfo.emergencyContact.email" />
-        </label>
-      </div>
+<!--      &lt;!&ndash; Emergency Contact &ndash;&gt;-->
+<!--      <div>-->
+<!--        <h3>Emergency Contact</h3>-->
+<!--        <label>-->
+<!--          Name:-->
+<!--          <input type="text" name="emergencyContactName" [(ngModel)]="registrant.parentInfo.emergencyContact.name" required />-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          Phone:-->
+<!--          <input type="tel" name="emergencyContactPhone" [(ngModel)]="registrant.parentInfo.emergencyContact.phone" required />-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          Email:-->
+<!--          <input type="email" name="emergencyContactEmail" [(ngModel)]="registrant.parentInfo.emergencyContact.email" />-->
+<!--        </label>-->
+<!--      </div>-->
 
-      <!-- Physician Contact -->
-      <div>
-        <h3>Physician Contact</h3>
-        <label>
-          Name:
-          <input type="text" name="physicianContactName" [(ngModel)]="registrant.parentInfo.physicianContact.name" required />
-        </label>
-        <label>
-          Phone:
-          <input type="tel" name="physicianContactPhone" [(ngModel)]="registrant.parentInfo.physicianContact.phone" required />
-        </label>
-        <label>
-          Email:
-          <input type="email" name="physicianContactEmail" [(ngModel)]="registrant.parentInfo.physicianContact.email" />
-        </label>
-      </div>
+<!--      &lt;!&ndash; Physician Contact &ndash;&gt;-->
+<!--      <div>-->
+<!--        <h3>Physician Contact</h3>-->
+<!--        <label>-->
+<!--          Name:-->
+<!--          <input type="text" name="physicianContactName" [(ngModel)]="registrant.parentInfo.physicianContact.name" required />-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          Phone:-->
+<!--          <input type="tel" name="physicianContactPhone" [(ngModel)]="registrant.parentInfo.physicianContact.phone" required />-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          Email:-->
+<!--          <input type="email" name="physicianContactEmail" [(ngModel)]="registrant.parentInfo.physicianContact.email" />-->
+<!--        </label>-->
+<!--      </div>-->
 
-      <!-- Address Information -->
-      <div>
-        <h3>Address Information</h3>
-        <label>
-          Street Address:
-          <input type="text" name="streetAddress" [(ngModel)]="registrant.parentInfo.addressInfo.streetAddress" required />
-        </label>
-        <label>
-          City:
-          <input type="text" name="city" [(ngModel)]="registrant.parentInfo.addressInfo.city" required />
-        </label>
-        <label>
-          Zip Code:
-          <input type="text" name="zipCode" [(ngModel)]="registrant.parentInfo.addressInfo.zipCode" required />
-        </label>
-      </div>
+<!--      &lt;!&ndash; Address Information &ndash;&gt;-->
+<!--      <div>-->
+<!--        <h3>Address Information</h3>-->
+<!--        <label>-->
+<!--          Street Address:-->
+<!--          <input type="text" name="streetAddress" [(ngModel)]="registrant.parentInfo.addressInfo.streetAddress" required />-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          City:-->
+<!--          <input type="text" name="city" [(ngModel)]="registrant.parentInfo.addressInfo.city" required />-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          Zip Code:-->
+<!--          <input type="text" name="zipCode" [(ngModel)]="registrant.parentInfo.addressInfo.zipCode" required />-->
+<!--        </label>-->
+<!--      </div>-->
 
-      <!-- Player Information -->
-      <div *ngFor="let player of registrant.playerInfo; let i = index">
-        <h3>Player {{ i + 1 }}</h3>
-        <label>
-          Name:
-          <input type="text" [(ngModel)]="player.name" name="playerName{{ i }}" required />
-        </label>
-        <label>
-          Age:
-          <input type="number" [(ngModel)]="player.age" name="playerAge{{ i }}" required />
-        </label>
-        <label>
-          Date of Birth:
-          <input type="date" [(ngModel)]="player.dateOfBirth" name="playerDOB{{ i }}" required />
-        </label>
-        <label>
-          Sport:
-          <select [(ngModel)]="player.sport" name="playerSport{{ i }}" required>
-            <option value="baseball">Baseball</option>
-            <option value="softball">Softball</option>
-          </select>
-        </label>
-        <label>
-          Age Group:
-          <select [(ngModel)]="player.ageGroup" name="playerAgeGroup{{ i }}" required>
-            <option value="8U">8U</option>
-            <option value="10U">10U</option>
-            <option value="12U">12U</option>
-            <option value="15U">15U</option>
-          </select>
-        </label>
-        <label>
-          Shirt Size:
-          <input type="text" [(ngModel)]="player.shirtSize" name="playerShirtSize{{ i }}" required />
-        </label>
-        <label>
-          Plays Travel Ball:
-          <input type="checkbox" [(ngModel)]="player.playsTravelBall" name="playerPlaysTravelBall{{ i }}" />
-        </label>
-        <label>
-          Waiver Signed:
-          <input type="checkbox" [(ngModel)]="player.waiverSigned" name="playerWaiverSigned{{ i }}" required />
-        </label>
+<!--      &lt;!&ndash; Player Information &ndash;&gt;-->
+<!--      <div *ngFor="let player of registrant.playerInfo; let i = index">-->
+<!--        <h3>Player {{ i + 1 }}</h3>-->
+<!--        <label>-->
+<!--          Name:-->
+<!--          <input type="text" [(ngModel)]="player.name" name="playerName{{ i }}" required />-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          Age:-->
+<!--          <input type="number" [(ngModel)]="player.age" name="playerAge{{ i }}" required />-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          Date of Birth:-->
+<!--          <input type="date" [(ngModel)]="player.dateOfBirth" name="playerDOB{{ i }}" required />-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          Sport:-->
+<!--          <select [(ngModel)]="player.sport" name="playerSport{{ i }}" required>-->
+<!--            <option value="baseball">Baseball</option>-->
+<!--            <option value="softball">Softball</option>-->
+<!--          </select>-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          Age Group:-->
+<!--          <select [(ngModel)]="player.ageGroup" name="playerAgeGroup{{ i }}" required>-->
+<!--            <option value="8U">8U</option>-->
+<!--            <option value="10U">10U</option>-->
+<!--            <option value="12U">12U</option>-->
+<!--            <option value="15U">15U</option>-->
+<!--          </select>-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          Shirt Size:-->
+<!--          <input type="text" [(ngModel)]="player.shirtSize" name="playerShirtSize{{ i }}" required />-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          Plays Travel Ball:-->
+<!--          <input type="checkbox" [(ngModel)]="player.playsTravelBall" name="playerPlaysTravelBall{{ i }}" />-->
+<!--        </label>-->
+<!--        <label>-->
+<!--          Waiver Signed:-->
+<!--          <input type="checkbox" [(ngModel)]="player.waiverSigned" name="playerWaiverSigned{{ i }}" required />-->
+<!--        </label>-->
 
-        <!-- Medical Information -->
-        <div>
-          <h4>Medical Information</h4>
-          <label>
-            Up to Date Immunizations:
-            <input type="checkbox" [(ngModel)]="player.medical.upToDateImmunizations" name="playerImmunizations{{ i }}" required />
-          </label>
-          <label>
-            Date of Last Tetanus Shot:
-            <input type="date" [(ngModel)]="player.medical.dateOfLastTetanusShot" name="playerTetanusShot{{ i }}" />
-          </label>
-          <label>
-            Allergies:
-            <input type="text" [(ngModel)]="player.medical.allergies" name="playerAllergies{{ i }}" />
-          </label>
-          <label>
-            Medication:
-            <input type="text" [(ngModel)]="player.medical.medication" name="playerMedication{{ i }}" />
-          </label>
-          <label>
-            Medical Conditions:
-            <input type="text" [(ngModel)]="player.medical.medicalConditions" name="playerMedicalConditions{{ i }}" />
-          </label>
-        </div>
-      </div>
+<!--        &lt;!&ndash; Medical Information &ndash;&gt;-->
+<!--        <div>-->
+<!--          <h4>Medical Information</h4>-->
+<!--          <label>-->
+<!--            Up to Date Immunizations:-->
+<!--            <input type="checkbox" [(ngModel)]="player.medical.upToDateImmunizations" name="playerImmunizations{{ i }}" required />-->
+<!--          </label>-->
+<!--          <label>-->
+<!--            Date of Last Tetanus Shot:-->
+<!--            <input type="date" [(ngModel)]="player.medical.dateOfLastTetanusShot" name="playerTetanusShot{{ i }}" />-->
+<!--          </label>-->
+<!--          <label>-->
+<!--            Allergies:-->
+<!--            <input type="text" [(ngModel)]="player.medical.allergies" name="playerAllergies{{ i }}" />-->
+<!--          </label>-->
+<!--          <label>-->
+<!--            Medication:-->
+<!--            <input type="text" [(ngModel)]="player.medical.medication" name="playerMedication{{ i }}" />-->
+<!--          </label>-->
+<!--          <label>-->
+<!--            Medical Conditions:-->
+<!--            <input type="text" [(ngModel)]="player.medical.medicalConditions" name="playerMedicalConditions{{ i }}" />-->
+<!--          </label>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <button type="button" (click)="addPlayer()">Add Player</button>
-      <button type="submit">Submit</button>
-    </form>
+<!--      <button type="button" (click)="addPlayer()">Add Player</button>-->
+<!--      <button type="submit">Submit</button>-->
+<!--    </form>-->
 
-  </div>
-</main>
+<!--  </div>-->
+<!--</main>-->
+
+<app-initial-form-flow></app-initial-form-flow>
 
 <router-outlet />

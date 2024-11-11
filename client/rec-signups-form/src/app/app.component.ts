@@ -4,11 +4,12 @@ import { HttpClient } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { response } from "express";
 import {NgForOf} from "@angular/common";
+import {InitialFormFlowComponent} from "../components/initial-form-flow/initial-form-flow.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, NgForOf],
+  imports: [RouterOutlet, FormsModule, NgForOf, InitialFormFlowComponent],
   providers: [HttpClient],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
