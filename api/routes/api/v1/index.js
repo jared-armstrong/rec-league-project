@@ -3,7 +3,7 @@ const router = express.Router();
 
 const mongoose = require('mongoose');
 require('models/Registrant');
-const Registrant = mongoose.model('registrants');
+const Registrant = mongoose.model('signups');
 
 // Root route
 router.get('/', (req, res) => {
@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
 
 // Get all the registrants in database
 router.get('/registrants', async (req, res) => {
-    // Using mongoose
     const filter = {};
     const registrants = await Registrant.find(filter);
     console.log(registrants);

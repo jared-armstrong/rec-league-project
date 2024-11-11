@@ -47,4 +47,4 @@ const RegistrantSchema = new Schema({
 });
 
 // Create the model
-mongoose.model('registrants', RegistrantSchema);
+mongoose.model('signups', RegistrantSchema);
