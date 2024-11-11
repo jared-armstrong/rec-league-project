@@ -18,4 +18,15 @@ router.get('/registrants', async (req, res) => {
     res.json(registrants);
 });
 
+// add a new registrant
+router.post('/registrants', async (req, res) => {
+    try {
+        const newRegistrant = new Registrant(req.body);
+        await newRegistrant.save();
+        res.status(201).json(newRegistrant);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+});
+
 module.exports = router;
