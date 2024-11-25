@@ -1,16 +1,15 @@
 <div class="form-container">
-  <!-- Parent/Guardian One Section -->
   <div *ngIf="currentStep === 1" class="form-card">
     <h2>Parent/Guardian One</h2>
     <form>
-      <label for="name1">Name:</label>
-      <input type="text" id="name1" [(ngModel)]="parentGuardianOne.name" name="name1" required>
+      <div class="input-container">
 
-      <label for="phone1">Phone:</label>
-      <input type="tel" id="phone1" [(ngModel)]="parentGuardianOne.phone" name="phone1" required>
+        <input type="text" id="name1" [(ngModel)]="parentGuardianOne.name" name="name1" required placeholder="Name">
 
-      <label for="email1">Email:</label>
-      <input type="email" id="email1" [(ngModel)]="parentGuardianOne.email" name="email1">
+        <input type="tel" id="phone1" [(ngModel)]="parentGuardianOne.phone" name="phone1" required placeholder="Phone Number">
+
+        <input type="email" id="email1" [(ngModel)]="parentGuardianOne.email" name="email1" placeholder="Email">
+      </div>
 
       <div class="button-container">
         <button type="button" (click)="goToNextStep()">Next</button>
@@ -18,18 +17,18 @@
     </form>
   </div>
 
-  <!-- Parent/Guardian Two Section -->
   <div *ngIf="currentStep === 2" class="form-card">
     <h2>Parent/Guardian Two</h2>
     <form>
-      <label for="name2">Name:</label>
-      <input type="text" id="name2" [(ngModel)]="parentGuardianTwo.name" name="name2" required>
+      <div class="input-container">
 
-      <label for="phone2">Phone:</label>
-      <input type="tel" id="phone2" [(ngModel)]="parentGuardianTwo.phone" name="phone2" required>
+        <input type="text" id="name2" [(ngModel)]="parentGuardianTwo.name" name="name2" placeholder="Name" required>
 
-      <label for="email2">Email:</label>
-      <input type="email" id="email2" [(ngModel)]="parentGuardianTwo.email" name="email2">
+        <input type="tel" id="phone2" [(ngModel)]="parentGuardianTwo.phone" name="phone2" placeholder="Phone Number" required>
+
+        <input type="email" id="email2" [(ngModel)]="parentGuardianTwo.email" name="email2" placeholder="Email">
+
+      </div>
 
       <div class="button-container">
         <button type="button" (click)="goToPreviousStep()">Back</button>
@@ -38,18 +37,19 @@
     </form>
   </div>
 
-  <!-- Emergency Contact Section -->
   <div *ngIf="currentStep === 3" class="form-card">
     <h2>Emergency Contact</h2>
     <form>
-      <label for="name3">Name:</label>
-      <input type="text" id="name3" [(ngModel)]="emergencyContact.name" name="name3" required>
 
-      <label for="phone3">Phone:</label>
-      <input type="tel" id="phone3" [(ngModel)]="emergencyContact.phone" name="phone3" required>
+      <div class="input-container">
 
-      <label for="email3">Email:</label>
-      <input type="email" id="email3" [(ngModel)]="emergencyContact.email" name="email3">
+        <input type="text" id="name3" [(ngModel)]="emergencyContact.name" name="name3" placeholder="Name" required>
+
+        <input type="tel" id="phone3" [(ngModel)]="emergencyContact.phone" name="phone3" placeholder="Phone Number" required>
+
+        <input type="email" id="email3" [(ngModel)]="emergencyContact.email" name="email3" placeholder="Email">
+
+      </div>
 
       <div class="button-container">
         <button type="button" (click)="goToPreviousStep()">Back</button>
@@ -60,4 +60,3 @@
 </div>
 
 <router-outlet />
-
